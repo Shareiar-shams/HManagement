@@ -16,41 +16,34 @@ This is a hotel management system where users can search for rooms, book them, a
 ## Installation
 
 #### 1. Clone the repository:
-    ```bash
+   
     git clone https://github.com/Shareiar-shams/HManagement.git
 
 #### 2. Install backend dependencies:
 
-    ```bash
+   
     composer install
 
 #### 3. Install frontend dependencies:
     Navigate to the frontend directory and run:
     
-    ```bash
     npm install
 
 
 #### 4. Configure environment:
     Copy .env.example to .env and update the environment variables such as database credentials, payment gateway settings, etc.
     
-    ```bash
     cp .env.example .env
     
 #### Generate application key:
-    
-    ```bash
     php artisan key:generate
 
 #### 5. Migrate the database:
-    ```bash
     php artisan migrate
 
 #### 6. Run the backend:
-    ```bash
     php artisan serve
 #### 7. Run the frontend:
-    ```bash
     npm run dev
 
 ## Usage
