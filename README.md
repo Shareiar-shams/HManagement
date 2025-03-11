@@ -1,66 +1,73 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Hotel Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This is a hotel management system where users can search for rooms, book them, and pay using SSLCommerz payment gateway. The system also allows users to book a restaurant, view their invoices, and perform a variety of hotel-related actions. Admins can manage rooms, categories, floors, and view reports such as revenue and total bookings.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Room Booking:** Users can book rooms based on the check-in and check-out date, number of guests (adults and children), and the preferred floor.
+- **Payment System:** Integrated SSLCommerz payment gateway for room bookings with cash or online payment options.
+- **Invoice Generation:** After successful payment, users can download the invoice in PDF format using the html2pdf package.
+- **Restaurant Booking:** Users can book a table in the restaurant by entering their name, email, phone number, number of guests, and the desired date/time.
+- **Admin Panel:** Admins can view detailed reports of room bookings, transactions, and revenue. Charts such as area charts and line charts are used to show booking and revenue data.
+- **Role-Based Permissions:** Admins can manage user roles and permissions using the spatie/laravel-permission package.
+- **Data Import/Export:** Admins can import/export data using CSV files with the maatwebsite/excel package.
+- **Authentication:** User authentication is handled by Laravel Breeze, and Vue.js is used for the frontend.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Installation
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#### 1. Clone the repository:
+```bash
+git clone https://github.com/Shareiar-shams/HManagement.git
 
-## Learning Laravel
+#### 2. Install backend dependencies:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```bash
+composer install
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+#### 3. Install frontend dependencies:
+Navigate to the frontend directory and run:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```bash
+npm install
 
-## Laravel Sponsors
+#### 4. Configure environment:
+Copy .env.example to .env and update the environment variables such as database credentials, payment gateway settings, etc.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+cp .env.example .env
 
-### Premium Partners
+#### 4. Configure environment:
+Copy .env.example to .env and update the environment variables such as database credentials, payment gateway settings, etc.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+```bash
+cp .env.example .env
 
-## Contributing
+- Generate application key:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+php artisan key:generate
 
-## Code of Conduct
+#### 5. Migrate the database:
+```bash
+php artisan migrate
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+#### 6. Run the backend:
+```bash
+php artisan serve
+#### 7. Run the frontend:
+```bash
+npm run dev
 
-## Security Vulnerabilities
+## Usage
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Frontend: The Vue.js frontend interacts with the Laravel backend through API endpoints.
+- Admin Panel: Admin users can log in and manage the hotel data such as room management, transaction reports, and revenue charts.
 
-## License
+### Admin Panel Access
+your_domain/admin/login (in local use localhost::8000/admin/login)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+To access the Admin Panel, visit the following URL:
+
+#### Login Credentials:
+- **Email:** admin@example.com
+- **Password:** shareiar
