@@ -59,3 +59,19 @@ This is a hotel management system where users can search for rooms, book them, a
 #### Login Credentials:
     - **Email:** admin@example.com
     - **Password:** shareiar
+
+
+## Contribution
+Feel free to contribute to this project by submitting issues or pull requests. Follow these steps:
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit changes and push to the branch.
+4. Open a pull request.
+
+
+---
+
+For any queries or support, feel free to contact [islamshareiar@gmail.com].
