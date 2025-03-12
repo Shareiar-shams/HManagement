@@ -47,6 +47,35 @@ This is a hotel management system where users can search for rooms, book them, a
 #### 7. Run the frontend:
     npm run dev
 
+## Scheduled Command: Update Booking Status
+
+This project includes a scheduled command to automatically update the status of bookings where the `checkout` date has passed.
+
+**Command:** `bookings:update-status`
+
+**Functionality:**
+
+* This command checks the `orders` database table for bookings where the `checkout` date is earlier than the current date.
+* It then updates the status of those bookings as needed (e.g., marking them as "completed" or "expired").
+
+**Scheduled Execution:**
+
+* The command is scheduled to run daily using Laravel's task scheduler:
+
+    ```php
+    Schedule::command('bookings:update-status')->daily();
+    ```
+
+**Manual Execution:**
+
+* To run this command manually from the terminal, use the following `artisan` command:
+
+    ```bash
+    php artisan bookings:update-status
+    ```
+
+* This is useful for testing or for manually triggering the update outside of the scheduled time.
+* 
 ## Usage
 
     - Frontend: The Vue.js frontend interacts with the Laravel backend through API endpoints.
