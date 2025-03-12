@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Models\User\Book;
+use App\Models\Admin\Product;
 use Carbon\Carbon;
 
 class UpdateBookingsStatus extends Command
@@ -33,9 +34,23 @@ class UpdateBookingsStatus extends Command
     {
         $today = Carbon::today();
 
+        $books = Book::where('order_status', 'booked')
+            ->where('checkoutDate', '<', $today)
+            ->get(); // Get records first
+
+        // Update order_status for those records
         Book::where('order_status', 'booked')
             ->where('checkoutDate', '<', $today)
             ->update(['order_status' => 'checkout']);
+
+        // Now, update the associated rooms
+        foreach ($books as $book) {
+            $room = Product::where('id', $book->product_id)->first();
+            if ($room) {
+                $room->booked = 0;
+                $room->save();
+            }
+        }
 
         $this->info('Booking statuses updated successfully.');
     }
