@@ -7,6 +7,7 @@ This is a hotel management system where users can search for rooms, book them, a
 - **Room Booking:** Users can book rooms based on the check-in and check-out date, number of guests (adults and children), and the preferred floor.
 - **Payment System:** Integrated SSLCommerz payment gateway for room bookings with cash or online payment options.
 - **Invoice Generation:** After successful payment, users can download the invoice in PDF format using the html2pdf package.
+- **Sending Email Notification:** After successful payment, users can read an instant email to about booking information using mailtrap.
 - **Restaurant Booking:** Users can book a table in the restaurant by entering their name, email, phone number, number of guests, and the desired date/time.
 - **Admin Panel:** Admins can view detailed reports of room bookings, transactions, and revenue. Charts such as area charts and line charts are used to show booking and revenue data.
 - **Role-Based Permissions:** Admins can manage user roles and permissions using the spatie/laravel-permission package.
