@@ -45,7 +45,7 @@ class UpdateBookingsStatus extends Command
 
         // Now, update the associated rooms
         foreach ($books as $book) {
-            $room = Product::where('id', $book->product_id)->first();
+            $room = Product::where('id', $book->product_id)->where('booked',1)->first();
             if ($room) {
                 $room->booked = 0;
                 $room->save();
