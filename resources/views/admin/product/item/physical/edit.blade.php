@@ -170,12 +170,12 @@
 			            	<div class="from-group">
 			            		
 								<label for="exampleInputEmail1">Adult Capacity</label>
-								<input type="number" class="form-control" id="adult_capacity" max="5" name="adult_capacity" placeholder="Enter Adult Capacity" value="{{$product->adult_capacity}}">
+								<input type="number" class="form-control" id="adult_capacity" max="9" name="adult_capacity" placeholder="Enter Adult Capacity" value="{{$product->adult_capacity}}">
 							</div>
 
 							<div class="from-group mt-2">
 								<label for="exampleInputEmail1">Child Capacity</label>
-								<input type="number" class="form-control" id="child_capacity" max="3" name="child_capacity" placeholder="Enter Child Capacity" value="{{$product->child_capacity}}">
+								<input type="number" class="form-control" id="child_capacity" max="5" name="child_capacity" placeholder="Enter Child Capacity" value="{{$product->child_capacity}}">
 							</div>
 			            </div>
 		                <!-- /.card-body -->
