@@ -278,13 +278,15 @@ class HomeController extends Controller
         $response = Http::asForm()->post('https://sandbox.sslcommerz.com/gwprocess/v4/api.php', $postData);
 
         if ($response->ok()) {
+
             $data = $response->json();
             if (!empty($data['GatewayPageURL'])) {
+
                 //Store room data in session
                 $order = new Book();
                 $order->room_name = $request->selectedHotel['name'];
                 $order->SKU = $request->selectedHotel['SKU'];
-                $order->room_price = $request->selectedHotel['price'];
+                $order->room_price = $request->selectedHotel['special_price'] ?? $request->selectedHotel['price'];
                 $order->total = $request->guestData['price'];
 
                 $order->floor  = $request->guestData['floorName'];
