@@ -89,7 +89,7 @@
                           
                             <td>{{$order->checkinDate}}</td>
                             <td>{{$order->checkoutDate}}</td>
-                            <td>{{$order->day}}</td>
+                            <td>{{$order->days}}</td>
                             <td>{{$order->adult_members}}</td>
                             <td>{{$order->children_members}}</td>
                         </tr>
