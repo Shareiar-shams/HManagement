@@ -44,12 +44,16 @@ This is a hotel management system where users can search for rooms, book them, a
     php artisan cache:clear
     php artisan config:cache
     
-#### 5. Migrate the database:
+#### 6. Migrate the database:
     php artisan migrate
-
-#### 6. Run the backend:
+    
+#### 7. Create symbolic link
+    php artisan stroage:link
+    
+#### 7. Run the backend:
     php artisan serve
-#### 7. Run the frontend:
+    
+#### 8. Run the frontend:
     npm run dev
 
 ## Scheduled Command: Update Booking Status
