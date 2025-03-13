@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Mail\OrderStatusMail;
 use App\Models\User\Book;
+use App\Models\Admin\Product;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -108,7 +109,12 @@ class OrdersController extends Controller
     {
         $order = Book::find($id);
         $order->order_status = $type;
-        $order->save(); 
+        $order->save();
+        if($type == 'Checkout'){
+            $room = Product::where('id', $order->product_id)->first();
+            $room->booked = 1;
+            $room->save();
+        } 
         $notification = array(
             'message' => 'Booking Type Status Change!', 
             'alert-type' => 'success',
