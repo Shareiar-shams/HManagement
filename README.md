@@ -38,7 +38,12 @@ This is a hotel management system where users can search for rooms, book them, a
     
 #### Generate application key:
     php artisan key:generate
-
+    
+#### 5. Clear Cache:
+    php artisan config:clear
+    php artisan cache:clear
+    php artisan config:cache
+    
 #### 5. Migrate the database:
     php artisan migrate
 
