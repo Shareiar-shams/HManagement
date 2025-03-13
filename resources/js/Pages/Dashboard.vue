@@ -45,7 +45,7 @@ import { Head } from '@inertiajs/vue3';
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr v-if="booked_room == null"
+                                <tr v-if="booked_room != null"
                                   v-for="(item, index) in booked_room"
                                   :key="item.id"
                                   class="bg-white border-b hover:bg-blue-50 transition-colors"
