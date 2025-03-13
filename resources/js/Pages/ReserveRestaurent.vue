@@ -42,7 +42,7 @@ import { Head } from '@inertiajs/vue3';
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr v-if="reserveRestaurent == null"
+                                <tr v-if="reserveRestaurent != null"
                                   v-for="(item, index) in reserveRestaurent"
                                   :key="item.id"
                                   class="bg-white border-b hover:bg-blue-50 transition-colors"
