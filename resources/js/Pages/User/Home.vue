@@ -3,11 +3,8 @@
     <main class="home">
       <ImageSlider :images="imageArray" />
       <h1 class="home-heading mb-0">
-        Find deals on hotels, homes, and much more...
+        Find deals on rooms, homes, and much more...
       </h1>
-      <p class="home-text mb-5">
-        From cozy country homes to funky city apartments
-      </p>
       <div class="input-container">
         <div class="date-input-container">
           <span style="width: 45%; text-align: center">{{ checkinDate }}</span>
